@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山西老年大学-终身学习与银发生活服务平台</title>
+    <meta name="description" content="山西老年大学官方网站，提供老年人学历教育、兴趣培训、文化活动及银龄风采展示。专注于提升老年人生活品质，打造全方位的老年教育学习平台。">
+    <meta name="keywords" content="山西老年大学, 老年大学, 山西老年教育, 银发学习, 终身学习, 老年兴趣班">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --primary-dark: #5D2906;
+            --accent-color: #D2691E;
+            --bg-color: #FDFBF7;
+            --text-main: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            font-size: 14px;
+            padding: 8px 0;
+            text-align: center;
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Features */
+        .features {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: #FFF3E0;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin: 0 auto 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: 60px 0;
+        }
+
+        .program-category {
+            margin-bottom: 60px;
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .category-header h3 {
+            font-size: 24px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .program-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .program-img {
+            height: 160px;
+            background-color: #ddd;
+            position: relative;
+        }
+        
+        .program-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .program-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(139, 69, 19, 0.9);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .program-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-info h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .program-meta {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .program-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .program-btn {
+            text-align: center;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* News Section */
+        .news {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .news-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .news-date {
+            background-color: #F5F5F5;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 70px;
+            height: fit-content;
+        }
+
+        .date-day {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .date-month {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        .news-content h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .news-content p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .sidebar h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-list a {
+            font-size: 14px;
+            color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 60px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background-color: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            position: relative;
+            padding-right: 50px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 24px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .faq-content {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            color: var(--white);
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .contact-info li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .news-layout {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-main {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        欢迎来到山西老年大学，这里是您终身学习的温馨家园
+    </div>
+
+    <header>
+        <div class="container header-main">
+            <a href="#" class="logo">
+                <div class="logo-icon">晋</div>
+                山西老年大学
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">课程中心</a></li>
+                    <li><a href="#">校园风采</a></li>
+                    <li><a href="#">招生简章</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-btn">在线报名</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>乐享银龄，智慧生活</h1>
+                <p>山西老年大学致力于为全省老年人提供优质的学历教育与兴趣培训，丰富精神文化生活，实现老有所学、老有所乐、老有所为。</p>
+                <div class="hero-buttons">
+                    <a href="#" class="cta-btn">查看课程</a>
+                    <a href="#" class="btn-outline">参观校园</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>办学特色</h2>
+                    <p>多元化的课程体系，专业的师资力量，贴心的服务保障</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎓</div>
+                        <h3>学历提升</h3>
+                        <p>开放教育学历教育，帮助老年人提升文化素养，获取国家承认的学历证书。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>兴趣培养</h3>
+                        <p>涵盖书画、声乐、舞蹈、摄影等数十个专业门类，满足个性化学习需求。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👵</div>
+                        <h3>银龄服务</h3>
+                        <p>提供适老化教学环境，配备智能教学设备，让科技助老，学习更轻松。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏆</div>
+                        <h3>成果展示</h3>
+                        <p>定期举办书画展、文艺汇演，为学员提供展示才华、交流互动的平台。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section class="programs">
+            <div class="container">
+                <div class="section-title">
+                    <h2>热门课程</h2>
+                    <p>精选优质课程，助您开启精彩人生新篇章</p>
+                </div>
+
+                <!-- Category 1 -->
+                <div class="program-category">
+                    <div class="category-header">
+                        <h3>📚 兴趣艺术类</h3>
+                        <a href="#" style="font-size:14px; color:var(--accent-color);">查看全部 ></a>
+                    </div>
+                    <div class="program-grid">
+                        <article class="program-card">
+                            <div class="program-img">
+                                <img src="https://picsum.photos/seed/art1/400/250" alt="国画基础">
+                                <span class="program-tag">热门</span>
+                            </div>
+                            <div class="program-info">
+                                <h4>国画山水基础</h4>
+                                <div class="program-meta">
+                                    <span>🕒 16课时</span>
+                                    <span>👨‍🏫 李老师</span>
+                                </div>
+                                <p class="program-desc">从零开始学习山水画技法，领略传统水墨魅力，培养高雅情趣。</p>
+                                <a href="#" class="program-btn">了解详情</a>
+                            </div>
+                        </article>
+                        <article class="program-card">
+                            <div class="program-img">
+                                <img src="https://picsum.photos/seed/art2/400/250" alt="声乐">
+                            </div>
+                            <div class="program-info">
+                                <h4>声乐合唱班</h4>
+                                <div class="program-meta">
+                                    <span>🕒 20课时</span>
+                                    <span>👨‍🏫 王教授</span>
+                                </div>
+                                <p class="program-desc">学习发声技巧与合唱排练，丰富老年精神文化生活。</p>
+                                <a href="#" class="program-btn">了解详情</a>
+                            </div>
+                        </article>
+                        <article class="program-card">
+                            <div class="program-img">
+                                <img src="https://picsum.photos/seed/art3/400/250" alt="书法">
+                            </div>
+                            <div class="program-info">
+                                <h4>楷书书法进阶</h4>
+                                <div class="program-meta">
+                                    <span>🕒 18课时</span>
+                                    <span>👨‍🏫 张老师</span>
+                                </div>
+                                <p class="program-desc">深入研习楷书结构，提升书写水平，修身养性。</p>
+                                <a href="#" class="program-btn">了解详情</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="program-category">
+                    <div class="category-header">
+                        <h3>💻 数字技能类</h3>
+                        <a href="#" style="font-size:14px; color:var(--accent-color);">查看全部 ></a>
+                    </div>
+                    <div class="program-grid">
+                        <article class="program-card">
+                            <div class="program-img">
+                                <img src="https://picsum.photos/seed/tech1/400/250" alt="智能手机">
+                            </div>
+                            <div class="program-info">
+                                <h4>智能手机应用</h4>
+                                <div class="program-meta">
+                                    <span>🕒 8课时</span>
+                                    <span>👨‍🏫 刘老师</span>
+                                </div>
+                                <p class="program-desc">教会您使用微信、视频通话、扫码支付等实用功能。</p>
+                                <a href="#" class="program-btn">了解详情</a>
+                            </div>
+                        </article>
+                        <article class="program-card">
+                            <div class="program-img">
+                                <img src="https://picsum.photos/seed/tech2/400/250" alt="电脑基础">
+                            </div>
+                            <div class="program-info">
+                                <h4>电脑基础入门</h4>
+                                <div class="program-meta">
+                                    <span>🕒 12课时</span>
+                                    <span>👨‍🏫 赵老师</span>
+                                </div>
+                                <p class="program-desc">掌握电脑基本操作，学习浏览网页与简单文档处理。</p>
+                                <a href="#" class="program-btn">了解详情</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="news">
+            <div class="container">
+                <div class="section-title">
+                    <h2>校园动态</h2>
+                    <p>关注学校最新活动与通知</p>
+                </div>
+                <div class="news-layout">
+                    <div class="news-list">
+                        <article class="news-item">
+                            <div class="news-date">
+                                <span class="date-day">15</span>
+                                <span class="date-month">10月</span>
+                            </div>
+                            <div class="news-content">
+                                <h4>山西老年大学举办2023年秋季学期开学典礼</h4>
+                                <p>金秋送爽，丹桂飘香。10月15日上午，我校2023年秋季学期开学典礼在多功能报告厅隆重举行...</p>
+                            </div>
+                        </article>
+                        <article class="news-item">
+                            <div class="news-date">
+                                <span class="date-day">08</span>
+                                <span class="date-month">10月</span>
+                            </div>
+                            <div class="news-content">
+                                <h4>关于开展“银龄风采”书画摄影展的征集通知</h4>
+                                <p>为庆祝重阳节，展现我校学员积极向上的精神风貌，学校决定举办“银龄风采”书画摄影展...</p>
+                            </div>
+                        </article>
+                        <article class="news-item">
+                            <div class="news-date">
+                                <span class="date-day">01</span>
+                                <span class="date-month">10月</span>
+                            </div>
+                            <div class="news-content">
+                                <h4>教育部老年教育专家莅临我校调研指导工作</h4>
+                                <p>10月1日，教育部老年教育专家组一行莅临我校，就老年教育办学模式与课程建设进行调研...</p>
+                            </div>
+                        </article>
+                    </div>
+                    <aside class="sidebar">
+                        <h4>快速导航</h4>
+                        <ul class="sidebar-list">
+                            <li><a href="#">招生简章</a> <span>2023秋</span></li>
+                            <li><a href="#">师资力量</a> <span>名师介绍</span></li>
+                            <li><a href="#">校园环境</a> <span>实景展示</span></li>
+                            <li><a href="#">校园活动</a> <span>精彩回顾</span></li>
+                            <li><a href="#">联系我们</a> <span>咨询热线</span></li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>开设专业</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100+</h3>
+                        <p>精品课程</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>5000+</h3>
+                        <p>在校学员</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>30+</h3>
+                        <p>教学班次</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题</h2>
+                    <p>解答您的报名与学习疑问</p>
+                </div>
+                <div class="faq-container">
+                    <details>
+                        <summary>报名需要满足什么条件？</summary>
+                        <div class="faq-content">
+                            <p>凡年满50周岁，身体条件良好，具有完全民事行为能力，热爱学习、追求健康生活的老年人均可报名。报名时需携带本人身份证原件及复印件。</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>课程收费吗？收费标准是多少？</summary>
+                        <div class="faq-content">
+                            <p>我校大部分兴趣课程为公益性质，不收取学费，仅收取少量教材费。学历提升类课程按照国家相关规定执行标准收费。</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>没有基础可以报名吗？</summary>
+                        <div class="faq-content">
+                            <p>完全可以。我校课程设置由浅入深，针对零基础学员开设了入门班，老师会耐心指导，帮助您逐步掌握技能。</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>上课时间是如何安排的？</summary>
+                        <div class="faq-content">
+                            <p>上课时间通常安排在每周二、四或周六、日的上午。具体上课时间以当学期公布的课表为准。</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">山西老年大学</a>
+                    <p style="font-size:14px; line-height:1.8; opacity:0.8;">
+                        山西老年大学是山西省教育厅直属的成人高等教育机构，致力于服务全省老年人教育事业，是老年人学习、娱乐、交流的重要阵地。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">组织机构</a></li>
+                        <li><a href="#">招生公告</a></li>
+                        <li><a href="#">师德师风</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>课程分类</h4>
+                    <ul>
+                        <li><a href="#">书画摄影</a></li>
+                        <li><a href="#">声乐舞蹈</a></li>
+                        <li><a href="#">计算机</a></li>
+                        <li><a href="#">养生保健</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <span>📍</span>
+                            <span>山西省太原市杏花岭区坝陵南街16号</span>
+                        </li>
+                        <li>
+                            <span>📞</span>
+                            <span>0351-12345678</span>
+                        </li>
+                        <li>
+                            <span>📧</span>
+                            <span>sxlnzx@sxuniversity.edu.cn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 山西老年大学 版权所有 | 晋ICP备12345678号-1</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
