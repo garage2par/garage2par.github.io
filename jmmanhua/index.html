@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JM漫画官网正版下载 - 提供最新最全的日韩漫画、欧美漫画在线阅读与正版下载服务。包含热门推荐、分类导航、高清无广告阅读体验。">
+    <meta name="keywords" content="JM漫画官网正版下载,日韩漫画,欧美漫画,在线阅读,漫画下载,正版漫画">
+    <title>JM漫画官网正版下载 - 热门日韩欧美漫画在线阅读与正版资源</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --primary-hover: #ff6b81;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-secondary: #57606f;
+            --border-color: #e1e1e1;
+            --nav-height: 60px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+            margin-left: 15px;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: var(--nav-height);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-download {
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-download:hover {
+            background: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff4757 0%, #ff6b81 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* Comic Card */
+        .comic-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-cover {
+            position: relative;
+            padding-top: 140%;
+            background: #eee;
+        }
+
+        .card-cover img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .card-info {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .card-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-sm {
+            flex: 1;
+            padding: 6px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 12px;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            background: white;
+            color: var(--text-secondary);
+        }
+
+        .btn-sm.primary {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Feature Section */
+        .feature-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .feature-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .feature-content h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .feature-content p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .feature-visual {
+            flex: 1;
+            min-width: 300px;
+            background: #f1f2f6;
+            height: 250px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-visual::after {
+            content: '应用图标示意';
+            color: #a4b0be;
+        }
+
+        /* Category Nav */
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .cat-btn {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .cat-btn:hover, .cat-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #2f3542;
+            color: #dfe4ea;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #a4b0be;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 12px;
+            color: #747d8c;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .feature-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">JM<span>漫画</span></a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">日韩漫画</a>
+                <a href="#">欧美漫画</a>
+                <a href="#">漫画下载</a>
+                <a href="#">排行榜</a>
+            </nav>
+            <a href="#" class="btn-download">官方下载</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>JM漫画官网正版下载</h1>
+            <p>汇集全球海量正版漫画资源，支持高清阅读、离线下载与多端同步。为您带来极致的二次元阅读体验。</p>
+            <div class="hero-tags">
+                <span class="tag">无广告</span>
+                <span class="tag">高速解析</span>
+                <span class="tag">每日更新</span>
+                <span class="tag">安全正版</span>
+            </div>
+            <div style="margin-top: 20px;">
+                <a href="#" class="btn-download" style="background: white; color: var(--primary-color);">立即开始阅读</a>
+                <a href="#" class="btn-download" style="background: transparent; border: 1px solid white; margin-left: 10px;">查看分类</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Features -->
+        <section class="feature-section">
+            <div class="feature-content">
+                <h2>为什么要使用JM漫画客户端？</h2>
+                <p>我们致力于为漫画爱好者提供最优质的阅读环境。通过JM漫画官网正版下载，您可以享受以下核心功能：</p>
+                <ul class="feature-list">
+                    <li>海量正版资源，涵盖日韩、欧美、国漫等数千部作品</li>
+                    <li>智能阅读模式，支持夜间护眼、翻页动画与手势操作</li>
+                    <li>极速下载引擎，支持多线程下载，断点续传更稳定</li>
+                    <li>完全免费阅读，无任何强制广告干扰</li>
+                </ul>
+            </div>
+            <div class="feature-visual">
+                <!-- Placeholder for App Store / Play Store badges -->
+                <div style="text-align: center; color: #a4b0be;">
+                    <div style="font-size: 40px; margin-bottom: 10px;">📱</div>
+                    <p>扫描二维码下载</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="section-title" style="margin-top: 40px;">
+            <h3>热门分类浏览</h3>
+        </section>
+        <div class="category-nav">
+            <button class="cat-btn active">全部</button>
+            <button class="cat-btn">恋爱</button>
+            <button class="cat-btn">玄幻</button>
+            <button class="cat-btn">奇幻</button>
+            <button class="cat-btn">恐怖</button>
+            <button class="cat-btn">冒险</button>
+            <button class="cat-btn">悬疑</button>
+        </div>
+
+        <!-- Hot Comics Grid -->
+        <section class="section-title">
+            <h3>今日热门推荐</h3>
+            <a href="#" style="font-size: 14px; color: var(--primary-color);">查看更多 &rarr;</a>
+        </section>
+
+        <div class="grid-3">
+            <!-- Card 1 -->
+            <article class="comic-card">
+                <div class="card-cover">
+                    <span class="card-tag">日韩</span>
+                    <img src="https://picsum.photos/seed/manga1/300/420" alt="漫画封面">
+                </div>
+                <div class="card-info">
+                    <h4 class="card-title">我的青春恋爱物语果然有问题</h4>
+                    <div class="card-meta">作者：渡航 | 更新至：第245话</div>
+                    <div class="card-actions">
+                        <a href="#" class="btn-sm primary">在线阅读</a>
+                        <a href="#" class="btn-sm">收藏</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="comic-card">
+                <div class="card-cover">
+                    <span class="card-tag">欧美</span>
+                    <img src="https://picsum.photos/seed/manga2/300/420" alt="漫画封面">
+                </div>
+                <div class="card-info">
+                    <h4 class="card-title">One Piece 海贼王</h4>
+                    <div class="card-meta">作者：尾田荣一郎 | 更新至：第1089话</div>
+                    <div class="card-actions">
+                        <a href="#" class="btn-sm primary">在线阅读</a>
+                        <a href="#" class="btn-sm">收藏</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="comic-card">
+                <div class="card-cover">
+                    <span class="card-tag">日韩</span>
+                    <img src="https://picsum.photos/seed/manga3/300/420" alt="漫画封面">
+                </div>
+                <div class="card-info">
+                    <h4 class="card-title">进击的巨人</h4>
+                    <div class="card-meta">作者：谏山创 | 更新至：完结</div>
+                    <div class="card-actions">
+                        <a href="#" class="btn-sm primary">在线阅读</a>
+                        <a href="#" class="btn-sm">收藏</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="comic-card">
+                <div class="card-cover">
+                    <span class="card-tag">国漫</span>
+                    <img src="https://picsum.photos/seed/manga4/300/420" alt="漫画封面">
+                </div>
+                <div class="card-info">
+                    <h4 class="card-title">狐妖小红娘</h4>
+                    <div class="card-meta">作者：小新 | 更新至：第718话</div>
+                    <div class="card-actions">
+                        <a href="#" class="btn-sm primary">在线阅读</a>
+                        <a href="#" class="btn-sm">收藏</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="comic-card">
+                <div class="card-cover">
+                    <span class="card-tag">日韩</span>
+                    <img src="https://picsum.photos/seed/manga5/300/420" alt="漫画封面">
+                </div>
+                <div class="card-info">
+                    <h4 class="card-title">咒术回战</h4>
+                    <div class="card-meta">作者：芥见下下 | 更新至：第236话</div>
+                    <div class="card-actions">
+                        <a href="#" class="btn-sm primary">在线阅读</a>
+                        <a href="#" class="btn-sm">收藏</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="comic-card">
+                <div class="card-cover">
+                    <span class="card-tag">欧美</span>
+                    <img src="https://picsum.photos/seed/manga6/300/420" alt="漫画封面">
+                </div>
+                <div class="card-info">
+                    <h4 class="card-title">Jujutsu Kaisen</h4>
+                    <div class="card-meta">作者：Gege Akutami | 更新至：第241话</div>
+                    <div class="card-actions">
+                        <a href="#" class="btn-sm primary">在线阅读</a>
+                        <a href="#" class="btn-sm">收藏</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Update Section -->
+        <section class="section-title" style="margin-top: 50px;">
+            <h3>最新更新</h3>
+        </section>
+        <div class="grid-3" style="grid-template-columns: 1fr 1fr;">
+            <div style="background: white; padding: 15px; border-radius: 8px; display: flex; gap: 15px; align-items: center;">
+                <img src="https://picsum.photos/seed/manga7/60/80" style="border-radius: 4px; width: 60px; height: 80px; object-fit: cover;">
+                <div>
+                    <h4 style="font-size: 14px; margin-bottom: 5px;">间谍过家家</h4>
+                    <span style="font-size: 12px; color: var(--text-secondary);">第85话 - 威尔</span>
+                </div>
+            </div>
+            <div style="background: white; padding: 15px; border-radius: 8px; display: flex; gap: 15px; align-items: center;">
+                <img src="https://picsum.photos/seed/manga8/60/80" style="border-radius: 4px; width: 60px; height: 80px; object-fit: cover;">
+                <div>
+                    <h4 style="font-size: 14px; margin-bottom: 5px;">电锯人</h4>
+                    <span style="font-size: 12px; color: var(--text-secondary);">第142话 - 噩梦</span>
+                </div>
+            </div>
+            <div style="background: white; padding: 15px; border-radius: 8px; display: flex; gap: 15px; align-items: center;">
+                <img src="https://picsum.photos/seed/manga9/60/80" style="border-radius: 4px; width: 60px; height: 80px; object-fit: cover;">
+                <div>
+                    <h4 style="font-size: 14px; margin-bottom: 5px;">蓝色监狱</h4>
+                    <span style="font-size: 12px; color: var(--text-secondary);">第203话 - 零</span>
+                </div>
+            </div>
+            <div style="background: white; padding: 15px; border-radius: 8px; display: flex; gap: 15px; align-items: center;">
+                <img src="https://picsum.photos/seed/manga10/60/80" style="border-radius: 4px; width: 60px; height: 80px; object-fit: cover;">
+                <div>
+                    <h4 style="font-size: 14px; margin-bottom: 5px;">我推的孩子</h4>
+                    <span style="font-size: 12px; color: var(--text-secondary);">第129话 - 真实</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于JM漫画</h4>
+                    <p style="font-size: 13px; line-height: 1.8; color: #a4b0be;">
+                        JM漫画致力于为用户提供最便捷的漫画阅读体验，汇集全网热门正版资源，支持多端同步阅读。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">网站首页</a></li>
+                        <li><a href="#">漫画分类</a></li>
+                        <li><a href="#">排行榜单</a></li>
+                        <li><a href="#">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>版权声明</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">侵权投诉</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>下载App</h4>
+                    <p style="font-size: 13px; color: #a4b0be; margin-bottom: 10px;">
+                        扫描二维码，随时随地畅享漫画。
+                    </p>
+                    <div style="width: 120px; height: 120px; background: #57606f; display: flex; align-items: center; justify-content: center; color: #dfe4ea;">
+                        二维码
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 JM漫画官网正版下载. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+                  </html>
