@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="hgame单机游戏下载 - 提供安全、无病毒的hgame单机游戏资源，包含角色扮演、模拟经营、解谜冒险等多种类型，支持PC与移动端直接下载。">
+    <meta name="keywords" content="hgame单机游戏下载,成人单机游戏,独立游戏,汉化游戏,PC游戏下载">
+    <title>hgame单机游戏下载 - 安全资源与汉化游戏推荐平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-body: #121214;
+            --bg-card: #1c1c1f;
+            --bg-header: #18181b;
+            --text-main: #e1e1e6;
+            --text-muted: #a1a1aa;
+            --accent-color: #8257e5;
+            --accent-hover: #9466ff;
+            --border-color: #29292e;
+            --radius: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(24, 24, 27, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        .search-bar {
+            display: flex;
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 5px 15px;
+            border: 1px solid var(--border-color);
+            width: 300px;
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            width: 100%;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, rgba(130, 87, 229, 0.1) 0%, var(--bg-body) 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            background: linear-gradient(to right, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 16px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 40px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 16px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .section-more:hover {
+            color: var(--accent-color);
+        }
+
+        /* Game Card */
+        .game-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-color);
+        }
+
+        .card-cover {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background-color: #2a2a2e;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .game-card:hover .card-cover img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-content {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 13px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+        }
+
+        /* Sidebar */
+        aside {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            height: fit-content;
+        }
+
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-muted);
+            width: 24px;
+            text-align: center;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { color: #ff4757; }
+        .rank-list li:nth-child(2) .rank-num { color: #ffa502; }
+        .rank-list li:nth-child(3) .rank-num { color: #2ed573; }
+
+        .rank-info h4 {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .rank-info p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-header);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 16px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: #52525b;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grid-4 { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .grid-4, .grid-3, .grid-2 { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 { font-size: 28px; }
+            .search-bar { display: none; }
+            nav ul { display: none; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .header-inner { padding: 0 10px; }
+        }
+
+        @media (max-width: 480px) {
+            .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+            .card-actions { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>H</span>Game下载
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">角色扮演</a></li>
+                    <li><a href="#">模拟经营</a></li>
+                    <li><a href="#">视觉小说</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索游戏名称...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>探索高品质hgame单机游戏世界</h1>
+            <p>我们提供经过安全检测的汉化单机游戏资源，涵盖剧情向、模拟经营与解谜冒险等多种类型，支持直接下载，纯净无广告。</p>
+            <div class="hero-tags">
+                <span class="tag"># 视觉小说</span>
+                <span class="tag"># 模拟养成</span>
+                <span class="tag"># 汉化补丁</span>
+                <span class="tag"># 离线游玩</span>
+                <span class="tag"># 高清画质</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Featured Games Grid -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">本周热门推荐</h2>
+                <a href="#" class="section-more">查看全部 &rarr;</a>
+            </div>
+            <div class="grid grid-4">
+                <!-- Game Card 1 -->
+                <article class="game-card">
+                    <div class="card-cover">
+                        <span class="card-badge">HOT</span>
+                        <img src="https://picsum.photos/seed/hgame1/300/400" alt="游戏封面">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">幻夜之森：深红羁绊</h3>
+                        <div class="card-meta">
+                            <span>📅 2023-10</span>
+                            <span>⭐ 9.2</span>
+                            <span>💾 4.2GB</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-primary">立即下载</a>
+                            <a href="#" class="btn btn-outline">详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 2 -->
+                <article class="game-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/hgame2/300/400" alt="游戏封面">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">都市幻想录：夜幕降临</h3>
+                        <div class="card-meta">
+                            <span>📅 2023-09</span>
+                            <span>⭐ 8.8</span>
+                            <span>💾 3.1GB</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-primary">立即下载</a>
+                            <a href="#" class="btn btn-outline">详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 3 -->
+                <article class="game-card">
+                    <div class="card-cover">
+                        <span class="card-badge">NEW</span>
+                        <img src="https://picsum.photos/seed/hgame3/300/400" alt="游戏封面">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">庄园主人的日常</h3>
+                        <div class="card-meta">
+                            <span>📅 2023-11</span>
+                            <span>⭐ 8.5</span>
+                            <span>💾 2.8GB</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-primary">立即下载</a>
+                            <a href="#" class="btn btn-outline">详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 4 -->
+                <article class="game-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/hgame4/300/400" alt="游戏封面">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">深海回响：未知领域</h3>
+                        <div class="card-meta">
+                            <span>📅 2023-08</span>
+                            <span>⭐ 9.0</span>
+                            <span>💾 5.0GB</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-primary">立即下载</a>
+                            <a href="#" class="btn btn-outline">详情</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Main Content Area: Sidebar + Latest List -->
+        <div class="grid grid-3" style="margin-top: 40px;">
+            <div class="main-content">
+                <section>
+                    <div class="section-header">
+                        <h2 class="section-title">最新发布</h2>
+                    </div>
+                    <div class="grid grid-2">
+                        <article class="game-card">
+                            <div class="card-cover">
+                                <img src="https://picsum.photos/seed/hgame5/300/400" alt="游戏封面">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">失落的图书馆：第三章</h3>
+                                <div class="card-meta">
+                                    <span>类型：解谜</span>
+                                    <span>大小：1.2GB</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="#" class="btn btn-primary">下载</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="game-card">
+                            <div class="card-cover">
+                                <img src="https://picsum.photos/seed/hgame6/300/400" alt="游戏封面">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">夏日祭典物语</h3>
+                                <div class="card-meta">
+                                    <span>类型：恋爱</span>
+                                    <span>大小：2.5GB</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="#" class="btn btn-primary">下载</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <aside>
+                <h3 class="sidebar-title">本周下载榜</h3>
+                <ul class="rank-list">
+                    <li>
+                        <span class="rank-num">1</span>
+                        <div class="rank-info">
+                            <h4>夜之眷属：起源</h4>
+                            <p>1.2w 下载</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank-num">2</span>
+                        <div class="rank-info">
+                            <h4>魔法少女的日常</h4>
+                            <p>9.8k 下载</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank-num">3</span>
+                        <div class="rank-info">
+                            <h4>帝国崛起：模拟</h4>
+                            <p>8.5k 下载</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank-num">4</span>
+                        <div class="rank-info">
+                            <h4>星空下的约定</h4>
+                            <p>7.2k 下载</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank-num">5</span>
+                        <div class="rank-info">
+                            <h4>赛博朋克：边缘</h4>
+                            <p>6.1k 下载</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <div style="margin-top: 30px; background: rgba(130, 87, 229, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(130, 87, 229, 0.3);">
+                    <h4 style="margin-bottom: 10px; color: #fff;">📢 下载须知</h4>
+                    <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+                        所有游戏资源仅供学习交流使用，请在下载后24小时内删除。请支持正版游戏开发者。
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span>H</span>Game下载
+                    </a>
+                    <p>专注提供优质的hgame单机游戏下载服务，致力于为玩家提供安全、快速、无病毒的汉化游戏资源体验。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏分类</h4>
+                    <ul>
+                        <li><a href="#">角色扮演 (RPG)</a></li>
+                        <li><a href="#">模拟经营</a></li>
+                        <li><a href="#">视觉小说</a></li>
+                        <li><a href="#">解谜冒险</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">下载指南</a></li>
+                        <li><a href="#">汉化补丁</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">联系站长</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">广告合作</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 HGame下载平台. All Rights Reserved. 本站内容仅供技术研究，请勿用于商业用途。
+            </div>
+        </div>
+    </footer>
+
+</body>
+              </html>
