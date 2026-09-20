@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="U蓝 - 专注于企业级绿色计算与可持续发展解决方案，提供AI算力优化、数据中心节能及碳足迹追踪服务。">
+    <meta name="keywords" content="U蓝, 绿色计算, 算力优化, 数据中心节能, 碳足迹追踪, 企业IT解决方案">
+    <title>U蓝-企业级绿色计算与可持续发展解决方案</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --primary-hover: #0052a3;
+            --accent-color: #00d2ff;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Features Section */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background-color: #e6f0ff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background-color: #fff;
+        }
+
+        .solution-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .solution-content {
+            flex: 1;
+        }
+
+        .solution-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .solution-content p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .check-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+        }
+
+        .check-icon {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .solution-visual {
+            flex: 1;
+            background-color: #f4f9ff;
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visual-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .visual-item {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .visual-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .visual-item p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #e0e0e0;
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+            padding: 0 1rem;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--card-bg);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 0 auto 1.5rem;
+            transition: background-color 0.3s;
+        }
+
+        .step:hover .step-number {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .step h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .cta-section p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn {
+            background-color: #fff;
+            color: var(--primary-color);
+            padding: 0.8rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 30px;
+        }
+
+        .cta-btn:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            nav ul {
+                margin: 1rem 0;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .solution-container {
+                flex-direction: column;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span>U蓝</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#solutions">解决方案</a></li>
+                    <li><a href="#technology">技术优势</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="btn btn-outline">登录控制台</a>
+                <a href="#contact" class="btn btn-primary">免费试用</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>让算力更绿，<br>让数据更有<span>价值</span></h1>
+                <p>U蓝提供企业级绿色计算解决方案，通过智能算法优化数据中心能耗，降低碳足迹，实现IT基础设施的可持续发展。</p>
+                <div style="display: flex; justify-content: center; gap: 1rem;">
+                    <a href="#solutions" class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1.1rem;">探索解决方案</a>
+                    <a href="#technology" class="btn btn-outline" style="padding: 0.8rem 2rem; font-size: 1.1rem;">了解技术原理</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>30%</h3>
+                        <p>平均节能率</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>服务企业客户</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>绿色算力认证</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section" id="technology">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心技术优势</h2>
+                    <p>基于深度学习与物联网技术，构建全方位的绿色计算体系</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3>动态负载均衡</h3>
+                        <p>实时监控服务器负载，智能调度算力资源，在保证性能的同时最大化硬件利用率，减少不必要的空转能耗。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M2 12h20"></path>
+                            </svg>
+                        </div>
+                        <h3>冷热数据分级</h3>
+                        <p>自动识别数据访问频率，将冷数据迁移至低功耗存储介质，显著降低存储能耗与运维成本。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </div>
+                        <h3>碳排放可视化</h3>
+                        <p>提供可视化的碳足迹追踪仪表盘，帮助企业管理者清晰了解IT系统对环境的影响，助力达成碳中和目标。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="section solution-section" id="solutions">
+            <div class="container">
+                <div class="solution-container">
+                    <div class="solution-content">
+                        <h2>一站式绿色算力管理平台</h2>
+                        <p>U蓝平台集成了能耗监控、策略优化与合规报告功能，帮助企业轻松应对日益严格的环保法规与能源成本压力。</p>
+                        <ul class="check-list">
+                            <li><span class="check-icon">✓</span> 全栈式云原生架构，支持混合云部署</li>
+                            <li><span class="check-icon">✓</span> 零代码策略配置，降低运维门槛</li>
+                            <li><span class="check-icon">✓</span> 自动生成ISO 50001能源管理体系报告</li>
+                            <li><span class="check-icon">✓</span> 7x24小时智能故障预警与自愈</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary" style="margin-top: 1.5rem;">获取方案详情</a>
+                    </div>
+                    <div class="solution-visual">
+                        <div class="visual-grid">
+                            <div class="visual-item">
+                                <h4>能耗监控</h4>
+                                <p>实时功率曲线与告警</p>
+                            </div>
+                            <div class="visual-item">
+                                <h4>资源调度</h4>
+                                <p>智能算法优化分配</p>
+                            </div>
+                            <div class="visual-item">
+                                <h4>碳足迹</h4>
+                                <p>环境影响量化分析</p>
+                            </div>
+                            <div class="visual-item">
+                                <h4>合规报告</h4>
+                                <p>自动化审计文档</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>部署流程</h2>
+                    <p>简单三步，开启您的绿色计算之旅</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>环境评估</h4>
+                        <p>U蓝专家上门或远程评估现有IT架构与能耗现状</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>策略配置</h4>
+                        <p>根据业务特性定制绿色计算策略与自动化规则</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>上线运行</h4>
+                        <p>系统自动部署，持续监控优化，定期生成报告</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>准备好降低碳排放了吗？</h2>
+                <p>立即注册 U蓝，享受首月免费试用服务</p>
+                <a href="#contact" class="btn cta-btn">免费注册账号</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                        U蓝
+                    </h3>
+                    <p>致力于通过技术创新推动IT行业的绿色转型，为全球企业提供可持续的算力解决方案。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品服务</h4>
+                    <ul>
+                        <li><a href="#">绿色算力平台</a></li>
+                        <li><a href="#">能耗监控仪表盘</a></li>
+                        <li><a href="#">碳足迹追踪</a></li>
+                        <li><a href="#">API 开放接口</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>解决方案</h4>
+                    <ul>
+                        <li><a href="#">金融行业</a></li>
+                        <li><a href="#">电商零售</a></li>
+                        <li><a href="#">政府机构</a></li>
+                        <li><a href="#">教育科研</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持与联系</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 U蓝科技有限公司 版权所有 | 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
